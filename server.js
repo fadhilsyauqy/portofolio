@@ -109,6 +109,7 @@ app.get('/api/messages', (req, res) => {
 // Serve frontend static files
 const distPath = path.join(__dirname, 'dist');
 if (fs.existsSync(distPath)) {
+  app.use('/portofolio', express.static(distPath));
   app.use(express.static(distPath));
 
   // SPA fallback for all unmatched GET requests

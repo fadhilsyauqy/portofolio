@@ -1,3 +1,6 @@
+const base = (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) || '/portofolio/';
+const asset = (p) => `${base.replace(/\/$/, '')}/${p.replace(/^\.?\//, '')}`;
+
 export const portfolioData = {
   profile: {
     name: "Rahmat Fadhil Syauqy",
@@ -20,7 +23,7 @@ export const portfolioData = {
       "Saya lulusan Teknik Informatika ITERA yang berfokus pada pengembangan aplikasi web full-stack dan rekayasa basis data. Terbiasa merancang sistem dari pemodelan skema relasional, logika backend yang terstruktur, hingga antarmuka web yang responsif dan berkinerja tinggi.",
       "Memiliki pengalaman membangun sistem Point-of-Sale (POS), portal manajemen presensi aparatur sipil publik, sistem informasi spasial geografis (SIG), hingga integrasi computer vision pada arsitektur cloud. Siap berkontribusi secara langsung dalam tim software engineering yang dinamis.",
     ],
-    photo: "./image/IMG_7949.png",
+    photo: asset("image/IMG_7949.png"),
     photoFallback: "https://placehold.co/600x800/f8fafc/2563eb?text=Fadhil",
     contact: {
       email: "rahmatfadhilsauqy08@gmail.com",
@@ -83,28 +86,28 @@ export const portfolioData = {
         "Pemodelan basis data relasional PostgreSQL dengan integritas transaksi dan relasi tabel penjualan/inventaris.",
         "Dashboard visual interaktif untuk rekapitulasi data penjualan harian dan laporan omzet produk.",
       ],
-      coverImage: "./image/Pos Merapi/dashboard.png",
+      coverImage: asset("image/Pos Merapi/dashboard.png"),
       technologies: ["Node.js", "Express.js", "PostgreSQL", "Tailwind CSS"],
       github: "https://github.com/fadhilsyauqy/POS-Toko-Merapi",
       slides: [
         {
-          img: "./image/Pos Merapi/dashboard.png",
+          img: asset("image/Pos Merapi/dashboard.png"),
           desc: "Dashboard analitik penjualan: ringkasan pendapatan, grafik transaksi, dan ringkasan stok.",
         },
         {
-          img: "./image/Pos Merapi/transaksi.png",
+          img: asset("image/Pos Merapi/transaksi.png"),
           desc: "Modul kasir: input barang belanjaan, kalkulasi subtotal otomatis, dan pembuatan struk transaksi.",
         },
         {
-          img: "./image/Pos Merapi/kon_byr.png",
+          img: asset("image/Pos Merapi/kon_byr.png"),
           desc: "Modul konfirmasi dan verifikasi status pembayaran transaksi.",
         },
         {
-          img: "./image/Pos Merapi/statistik.png",
+          img: asset("image/Pos Merapi/statistik.png"),
           desc: "Laporan statistik performa produk dan visualisasi tren omzet penjualan.",
         },
         {
-          img: "./image/Pos Merapi/login.png",
+          img: asset("image/Pos Merapi/login.png"),
           desc: "Antarmuka autentikasi pengguna POS dengan proteksi sesi.",
         },
       ],
@@ -122,12 +125,12 @@ export const portfolioData = {
         "Penyebaran arsitektur server inferensi pada Google Cloud Platform (GCP).",
         "Kolaborasi tim lintas disiplin untuk integrasi model cerdas ke platform siap pakai.",
       ],
-      coverImage: "./image/tani/mockup.png",
+      coverImage: asset("image/tani/mockup.png"),
       technologies: ["Python", "Google Cloud", "Computer Vision", "REST API"],
       github: "https://github.com/TaniCare/cloud-computing",
       slides: [
         {
-          img: "./image/tani/mockup.png",
+          img: asset("image/tani/mockup.png"),
           desc: "Antarmuka aplikasi Tani Care dan alur pemindaian citra daun untuk deteksi penyakit tanaman.",
         },
       ],
@@ -145,24 +148,24 @@ export const portfolioData = {
         "Formulir pencatatan presensi dengan validasi real-time untuk menjamin kepatuhan dan integritas waktu.",
         "Dashboard rekapitulasi terstruktur dengan penyimpanan data audit presensi di MySQL.",
       ],
-      coverImage: "./image/kpu/dashboard.png",
+      coverImage: asset("image/kpu/dashboard.png"),
       technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
       github: null,
       slides: [
         {
-          img: "./image/kpu/dashboard.png",
+          img: asset("image/kpu/dashboard.png"),
           desc: "Dashboard utama sistem presensi staf Komisi Pemilihan Umum (KPU) Kota Bukittinggi.",
         },
         {
-          img: "./image/kpu/form.png",
+          img: asset("image/kpu/form.png"),
           desc: "Formulir input data kehadiran harian dilengkapi validasi integritas input data.",
         },
         {
-          img: "./image/kpu/login.png",
+          img: asset("image/kpu/login.png"),
           desc: "Halaman autentikasi dengan enkripsi password dan validasi hak akses berjenjang.",
         },
         {
-          img: "./image/kpu/home.png",
+          img: asset("image/kpu/home.png"),
           desc: "Halaman beranda portal presensi staf KPU Kota Bukittinggi.",
         },
       ],
