@@ -40,6 +40,11 @@ app.get('/api/portfolio', (req, res) => {
   res.json(portfolioData);
 });
 
+// API: Get CV data
+app.get('/api/cv', (req, res) => {
+  res.json(portfolioData.cv);
+});
+
 // API: Submit contact message
 app.post('/api/contact', (req, res) => {
   try {

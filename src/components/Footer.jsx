@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, FileText } from 'lucide-react';
 
-export default function Footer({ profile }) {
+export default function Footer({ profile, onNavigateToCV }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -16,13 +16,25 @@ export default function Footer({ profile }) {
           </span>
         </div>
 
-        <button
-          onClick={scrollToTop}
-          className="inline-flex items-center gap-1.5 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
-        >
-          <span>Kembali ke Atas</span>
-          <ArrowUp className="w-3.5 h-3.5" />
-        </button>
+        <div className="flex items-center gap-4">
+          {onNavigateToCV && (
+            <button
+              onClick={onNavigateToCV}
+              className="inline-flex items-center gap-1.5 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Curriculum Vitae (CV)</span>
+            </button>
+          )}
+
+          <button
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-1.5 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
+          >
+            <span>Kembali ke Atas</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
+        </div>
       </div>
     </footer>
   );

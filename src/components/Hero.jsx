@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArrowDown, Mail } from 'lucide-react';
+import { ArrowDown, Mail, FileText } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from './Icons';
 
-export default function Hero({ profile }) {
+export default function Hero({ profile, onNavigateToCV }) {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -33,13 +33,21 @@ export default function Hero({ profile }) {
         </p>
 
         {/* Action Row */}
-        <div className="mt-10 flex flex-wrap items-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
           <button
             onClick={() => scrollTo('projects')}
             className="px-5 py-2.5 rounded-lg bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors shadow-2xs cursor-pointer inline-flex items-center gap-2"
           >
             <span>Eksplorasi Proyek</span>
             <ArrowDown className="w-4 h-4 text-slate-400" />
+          </button>
+
+          <button
+            onClick={onNavigateToCV}
+            className="px-5 py-2.5 rounded-lg bg-white border border-slate-300 text-slate-800 text-sm font-medium hover:bg-slate-50 hover:border-slate-400 transition-colors shadow-2xs cursor-pointer inline-flex items-center gap-2"
+          >
+            <FileText className="w-4 h-4 text-slate-500" />
+            <span>Lihat CV / Resume</span>
           </button>
 
           <button
@@ -50,10 +58,10 @@ export default function Hero({ profile }) {
             <span>Kontak Saya</span>
           </button>
 
-          <div className="h-6 w-px bg-slate-200 mx-2 hidden sm:block" />
+          <div className="h-6 w-px bg-slate-200 mx-1 hidden sm:block" />
 
           {/* Social Links */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <a
               href={profile.contact.github}
               target="_blank"

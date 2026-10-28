@@ -15,6 +15,8 @@ export const portfolioData = {
     ],
     workPreferences: "Tersedia untuk Full-Time, Kontrak, Remote, Hybrid, maupun On-site.",
     location: "Indonesia (WIB / UTC+7)",
+    phone: "+62 812-7067-8170",
+    phoneClean: "6281270678170",
     education: {
       degree: "S1 Teknik Informatika",
       institution: "Institut Teknologi Sumatera (ITERA)",
@@ -29,6 +31,7 @@ export const portfolioData = {
       email: "rahmatfadhilsauqy08@gmail.com",
       github: "https://github.com/fadhilsyauqy",
       linkedin: "https://linkedin.com/in/fadhilsyauqy08",
+      phone: "+62 812-7067-8170",
     },
   },
 
@@ -204,4 +207,163 @@ export const portfolioData = {
         "https://github.com/fadhilsyauqy/121140109-UAS-Pemrogaram_Web_RC",
     },
   ],
+
+  cv: {
+    fullName: "Rahmat Fadhil Syauqy.A",
+    title: "INFORMATICS ENGINEERING GRADUATE | SOFTWARE & DATA",
+    status: "Fresh Graduate · Aktif Mencari Peluang Kerja",
+    location: "Indonesia (WIB / UTC+7)",
+    phone: "+62 812-7067-8170",
+    phoneClean: "6281270678170",
+    email: "rahmatfadhilsauqy08@gmail.com",
+    linkedin: "https://linkedin.com/in/fadhilsyauqy08",
+    github: "https://github.com/fadhilsyauqy",
+    pdfUrl: asset("CV_Rahmat_Fadhil_Syauqy.pdf"),
+    pdfFileName: "CV_Rahmat_Fadhil_Syauqy.A.pdf",
+    summary:
+      "Fresh graduate Teknik Informatika dari Institut Teknologi Sumatera (ITERA) dengan fokus pada software development, data, database, dan cloud computing. Memiliki pengalaman membangun aplikasi web menggunakan Laravel/PHP dan JavaScript/Node.js, mengelola database MySQL/PostgreSQL, serta menerapkan Google Cloud untuk deployment aplikasi berbasis AI. Terbiasa mengembangkan solusi end-to-end, mengolah dan memvisualisasikan data, serta bekerja secara kolaboratif dalam proyek teknologi.",
+    workExperience: [
+      {
+        role: "Cloud Computing Cohort",
+        company: "Bangkit Academy",
+        location: "Bandung, Indonesia",
+        period: "Sep 2024 - Jan 2025",
+        type: "Program Studi Independen Bersertifikat",
+        bullets: [
+          "Mengimplementasikan infrastruktur Google Cloud untuk mendukung deployment aplikasi AI Tani Care dan integrasi layanan machine learning.",
+          "Mengintegrasikan layanan cloud untuk kebutuhan penyimpanan, komputasi, API, dan deployment aplikasi.",
+          "Berkolaborasi dalam tim lintas bidang untuk mengembangkan solusi AI yang mampu mengidentifikasi penyakit tanaman melalui citra daun dengan akurasi model hingga 90%.",
+        ],
+      },
+      {
+        role: "Data & Information Planning Staff Intern",
+        company: "KPU Kota Bukittinggi",
+        location: "Bukittinggi, Indonesia",
+        period: "Jun 2024 - Aug 2024",
+        type: "Magang / Internship",
+        bullets: [
+          "Mengembangkan website presensi mandiri berbasis Laravel/PHP dan MySQL untuk memusatkan proses pencatatan serta pemantauan kehadiran staf.",
+          "Mengelola dan memperbarui data pemilih melalui sinkronisasi berkala untuk mendukung akurasi dan konsistensi data dalam penyusunan Daftar Pemilih Tetap (DPT).",
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: "Sistem POS Toko Merapi",
+        description:
+          "Aplikasi point-of-sale end-to-end untuk manajemen inventaris, transaksi real-time, laporan penjualan, autentikasi, dan hak akses pengguna.",
+        bullets: [
+          "Mengembangkan backend REST API menggunakan Express.js/Node.js dengan PostgreSQL dan Prisma ORM menggunakan pola arsitektur MVC.",
+          "Mengimplementasikan manajemen inventaris, transaksi, laporan penjualan, serta role-based access untuk Admin dan Kasir.",
+          "Menerapkan JWT authentication untuk keamanan akses pengguna serta mengintegrasikan Cloudinary untuk penyimpanan dan pengelolaan gambar pada aplikasi.",
+        ],
+        github: "https://github.com/fadhilsyauqy/POS-Toko-Merapi",
+        tools: ["Express.js", "Node.js", "PostgreSQL", "Prisma", "JavaScript"],
+      },
+      {
+        name: "Tani Care - AI Plant Disease Detection",
+        description:
+          "Aplikasi berbasis AI untuk mendeteksi gejala penyakit tanaman melalui analisis citra daun dan di-deploy menggunakan infrastruktur cloud.",
+        bullets: [
+          "Berkontribusi pada pengembangan aplikasi AI untuk mendeteksi penyakit tanaman melalui analisis citra daun dengan akurasi model hingga 90%.",
+          "Mengembangkan sisi cloud computing untuk menghubungkan aplikasi dengan API machine learning dan menyiapkan kebutuhan deployment pada Google Cloud.",
+          "Berkolaborasi dalam tim lintas bidang yang mencakup machine learning, mobile development, dan cloud computing.",
+        ],
+        github: "https://github.com/TaniCare/cloud-computing",
+        tools: ["Google Cloud", "JavaScript", "Python", "REST API"],
+      },
+      {
+        name: "SIG Rawan Gempa Sumbar",
+        description:
+          "Sistem Informasi Geografis interaktif untuk memetakan lokasi rawan gempa di Sumatera Barat, dilengkapi pengelolaan data spasial untuk admin dan peta visual bagi pengguna.",
+        bullets: [
+          "Mengembangkan fitur pemetaan lokasi rawan gempa dan pengelolaan data spasial untuk kebutuhan admin dan pengguna.",
+          "Mengolah data spasial menggunakan QGIS dan mengintegrasikannya ke dalam sistem berbasis web.",
+        ],
+        github:
+          "https://github.com/fadhilsyauqy/Tugas-Besar-SIG-0ea4ad21036b5a566ff8300d236f6b20e033a389",
+        tools: ["PHP", "JavaScript", "QGIS"],
+      },
+      {
+        name: "Web Manajemen Pengguna",
+        description:
+          "Aplikasi CRUD dengan autentikasi, integrasi database, pelacakan IP Address, dan validasi form menggunakan pendekatan OOP pada JavaScript.",
+        bullets: [
+          "Membangun manajemen pengguna terstruktur dengan otentikasi sesi dan pencatatan riwayat audit akses IP.",
+          "Menerapkan validasi form ketat sisi klien dengan arsitektur berorientasi objek (OOP).",
+        ],
+        github:
+          "https://github.com/fadhilsyauqy/121140109-UAS-Pemrogaram_Web_RC",
+        tools: ["PHP", "MySQL", "JavaScript (OOP)"],
+      },
+      {
+        name: "Sistem Laporan Kehadiran KPU Kota Bukittinggi",
+        description:
+          "Platform internal untuk pelaporan, pelacakan, dan autentikasi kehadiran staf KPU secara terpusat.",
+        bullets: [
+          "Membangun alur presensi mandiri dan pengelolaan data kehadiran untuk mengurangi proses pelaporan manual.",
+          "Mengembangkan aplikasi menggunakan Laravel/PHP dan MySQL dengan fokus pada kemudahan penggunaan serta konsistensi data.",
+        ],
+        github: null,
+        tools: ["Laravel", "PHP", "MySQL"],
+      },
+    ],
+    education: {
+      degree: "Bachelor of Informatics Engineering (S1 Teknik Informatika)",
+      institution: "Institut Teknologi Sumatera (ITERA)",
+      location: "Lampung, Indonesia",
+      gpa: "3.42 / 4.00",
+      period: "Jul 2021 - Apr 2026",
+      coursework:
+        "Sistem Informasi, Sistem Informasi Geografis, Pemrograman Web, serta Visualisasi Data dan Informasi.",
+    },
+    organizationalExperience: [
+      {
+        role: "Staff Pengabdian Masyarakat",
+        organization: "Himpunan Mahasiswa Informatika",
+        location: "Lampung, Indonesia",
+        period: "Mar 2023 - Feb 2024",
+        bullets: [
+          "Merancang dan melaksanakan program pengabdian masyarakat yang berfokus pada literasi digital dan solusi IT tepat guna.",
+          "Membangun komunikasi dengan mitra dan stakeholder untuk mendukung kelancaran serta keberlanjutan kegiatan.",
+        ],
+      },
+      {
+        role: "Staff Ahli Divisi Olahraga",
+        organization: "Ikatan Keluarga Minangkabau ITERA",
+        location: "Lampung, Indonesia",
+        period: "Mar 2023 - Feb 2024",
+        bullets: [
+          "Merancang dan mengawasi program latihan serta agenda olahraga organisasi.",
+          "Mengelola kebutuhan teknis, perlengkapan, fasilitas, dan operasional kegiatan di lapangan.",
+        ],
+      },
+    ],
+    technicalSkills: [
+      {
+        category: "Programming Languages",
+        skills: ["JavaScript", "PHP", "Python", "SQL"],
+      },
+      {
+        category: "Web Development",
+        skills: ["Node.js", "Express.js", "Laravel", "REST API", "Tailwind CSS", "Bootstrap"],
+      },
+      {
+        category: "Database",
+        skills: ["PostgreSQL", "MySQL", "Prisma ORM"],
+      },
+      {
+        category: "Cloud & Tools",
+        skills: ["Google Cloud Platform", "Git", "GitHub", "Postman"],
+      },
+      {
+        category: "Data & Visualization",
+        skills: ["Microsoft Excel", "Tableau", "QGIS"],
+      },
+      {
+        category: "Design",
+        skills: ["Adobe Photoshop"],
+      },
+    ],
+  },
 };

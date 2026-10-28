@@ -52,3 +52,35 @@ body {
 .animate-modal-enter {
   animation: modalEnter 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Print styles for Clean CV Export */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+  
+  .print-hidden,
+  header,
+  footer {
+    display: none !important;
+  }
+
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { GraduationCap, MapPin, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, MapPin, CheckCircle2, FileText } from 'lucide-react';
 
-export default function About({ profile }) {
+export default function About({ profile, onNavigateToCV }) {
   const [imgSrc, setImgSrc] = useState(profile.photo);
 
   return (
@@ -62,6 +62,18 @@ export default function About({ profile }) {
                     </span>
                   </div>
                 </div>
+              </div>
+
+              {/* Link to Full CV */}
+              <div className="mt-6 pt-4 border-t border-slate-100">
+                <button
+                  type="button"
+                  onClick={onNavigateToCV}
+                  className="inline-flex items-center gap-2 text-xs font-mono font-medium text-slate-800 hover:text-slate-950 px-3 py-1.5 rounded-lg bg-slate-100/90 hover:bg-slate-200/80 transition-colors cursor-pointer border border-slate-200"
+                >
+                  <FileText className="w-3.5 h-3.5 text-slate-500" />
+                  <span>Buka Curriculum Vitae (CV) Lengkap →</span>
+                </button>
               </div>
             </div>
           </div>

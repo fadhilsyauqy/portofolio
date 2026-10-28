@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
 
 const NAV_LINKS = [
   { label: 'Tentang', href: '#about' },
@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: 'Kontak', href: '#contact' },
 ];
 
-export default function Navbar({ profile }) {
+export default function Navbar({ profile, onNavigate }) {
   const [activeSection, setActiveSection] = useState('about');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -71,7 +71,7 @@ export default function Navbar({ profile }) {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm">
+        <nav className="hidden md:flex items-center space-x-7 text-sm">
           {NAV_LINKS.map((link) => {
             const sectionId = link.href.replace('#', '');
             const isActive = activeSection === sectionId;
@@ -90,6 +90,17 @@ export default function Navbar({ profile }) {
               </a>
             );
           })}
+
+          {/* CV Button in Navigation */}
+          <button
+            type="button"
+            onClick={() => onNavigate && onNavigate('cv')}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium text-slate-700 bg-slate-100/80 hover:bg-slate-200/80 hover:text-slate-900 transition-colors cursor-pointer border border-slate-200/70"
+            title="Buka Halaman CV Lengkap"
+          >
+            <FileText className="w-3.5 h-3.5 text-slate-500" />
+            <span>Lihat CV</span>
+          </button>
         </nav>
 
         {/* Action Button */}
@@ -107,7 +118,7 @@ export default function Navbar({ profile }) {
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle navigasi"
-            className="md:hidden p-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+            className="md:hidden p-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -127,6 +138,25 @@ export default function Navbar({ profile }) {
               {link.label}
             </a>
           ))}
+
+          {/* CV Link in Mobile Menu */}
+          <button
+            type="button"
+            onClick={() => {
+              setMobileOpen(false);
+              if (onNavigate) onNavigate('cv');
+            }}
+            className="w-full text-left py-2.5 text-sm text-slate-800 hover:text-slate-950 font-medium transition-colors flex items-center justify-between border-t border-slate-100 pt-3 cursor-pointer"
+          >
+            <span className="flex items-center gap-2">
+              <FileText className="w-4 h-4 text-slate-500" />
+              <span>Curriculum Vitae (CV)</span>
+            </span>
+            <span className="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
+              PDF & Web
+            </span>
+          </button>
+
           <a
             href={`mailto:${profile.contact.email}`}
             className="inline-flex w-full items-center justify-center gap-1.5 text-xs font-mono font-medium px-4 py-2.5 rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors mt-2"
