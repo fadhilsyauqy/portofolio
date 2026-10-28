@@ -5,7 +5,7 @@ export const portfolioData = {
   profile: {
     name: "Rahmat Fadhil Syauqy",
     role: "Software & Data Engineer",
-    status: "Aktif mencari posisi: Software Engineer / Web Developer",
+    status: "Fresh Graduate · Aktif Mencari Pekerjaan",
     openToWork: true,
     rolesSought: [
       "Software Engineer",
@@ -37,41 +37,20 @@ export const portfolioData = {
 
   skillsMatrix: [
     {
-      category: "Frontend & Web",
-      items: [
-        { name: "React.js", note: "SPA, Hooks, State" },
-        { name: "JavaScript (ES6+)", note: "Modern DOM, Async, OOP" },
-        { name: "Tailwind CSS", note: "Utility-first, Responsive" },
-        { name: "HTML5 & CSS3", note: "Semantic, Accessibility" },
-        { name: "Bootstrap", note: "Rapid Prototyping" },
-      ],
+      category: "Bahasa Pemrograman",
+      skills: ["JavaScript", "PHP", "Python", "SQL", "HTML & CSS"],
     },
     {
-      category: "Backend & Runtime",
-      items: [
-        { name: "Node.js & Express", note: "REST API, Middleware" },
-        { name: "PHP & Laravel", note: "MVC, Eloquent, Auth" },
-        { name: "Python", note: "Automation, OOP, Data" },
-        { name: "RESTful Architecture", note: "API Design & Contract" },
-      ],
+      category: "Web Development",
+      skills: ["Node.js", "Express.js", "Laravel", "React.js", "Tailwind CSS", "Bootstrap", "REST API"],
     },
     {
-      category: "Database & Storage",
-      items: [
-        { name: "PostgreSQL", note: "Relational, Indexing" },
-        { name: "MySQL", note: "Schema Design, Queries" },
-        { name: "Data Modeling", note: "Normalisasi 1NF-3NF, ERD" },
-        { name: "Query Optimization", note: "Joins, Aggregations" },
-      ],
+      category: "Basis Data",
+      skills: ["PostgreSQL", "MySQL", "Prisma ORM"],
     },
     {
-      category: "Cloud, GIS & Tools",
-      items: [
-        { name: "Google Cloud (GCP)", note: "Cloud Deployment" },
-        { name: "Git & GitHub", note: "Version Control, CI/CD" },
-        { name: "QGIS", note: "Spatial & GeoJSON Mapping" },
-        { name: "Tableau & Excel", note: "Data Analysis & Viz" },
-      ],
+      category: "Cloud, Tools & Analisis Data",
+      skills: ["Google Cloud Platform", "Git & GitHub", "Postman", "Tableau", "Microsoft Excel", "QGIS"],
     },
   ],
 
