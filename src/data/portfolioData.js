@@ -38,18 +38,22 @@ export const portfolioData = {
   skillsMatrix: [
     {
       category: "Bahasa Pemrograman",
+      description: "Bahasa utama untuk logika sistem, backend, dan komputasi",
       skills: ["JavaScript", "PHP", "Python", "SQL", "HTML & CSS"],
     },
     {
       category: "Web Development",
+      description: "Framework, runtime, dan perancangan antarmuka & REST API",
       skills: ["Node.js", "Express.js", "Laravel", "React.js", "Tailwind CSS", "Bootstrap", "REST API"],
     },
     {
       category: "Basis Data",
+      description: "Pengelolaan skema relasional dan query data",
       skills: ["PostgreSQL", "MySQL", "Prisma ORM"],
     },
     {
       category: "Cloud, Tools & Analisis Data",
+      description: "Infrastruktur cloud, version control, dan visualisasi data",
       skills: ["Google Cloud Platform", "Git & GitHub", "Postman", "Tableau", "Microsoft Excel", "QGIS"],
     },
   ],
