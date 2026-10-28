@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, ArrowUpRight, MapPin, Briefcase, Clock, Sparkles } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from './Icons';
 
 export default function Contact({ profile }) {
@@ -45,36 +44,33 @@ export default function Contact({ profile }) {
 
         {/* Main Job-Seeker Card */}
         <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-2xs space-y-8">
-          {/* Status & Work Preferences Bar */}
+          {/* Status & Work Preferences Bar - Clean typography without icon clutter */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pb-6 border-b border-slate-100 text-xs font-mono">
-            <div className="flex items-start gap-2.5">
-              <Briefcase className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
-              <div>
-                <span className="text-slate-400 block text-[11px]">PERAN YANG DIINCAR</span>
-                <span className="text-slate-800 font-medium font-sans text-xs">
-                  Software Engineer, Full-Stack, Backend
-                </span>
-              </div>
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase tracking-wider mb-1">
+                PERAN YANG DIINCAR
+              </span>
+              <span className="text-slate-900 font-semibold font-sans text-xs block">
+                Software Engineer, Full-Stack, Backend
+              </span>
             </div>
 
-            <div className="flex items-start gap-2.5">
-              <Clock className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
-              <div>
-                <span className="text-slate-400 block text-[11px]">KESIAPAN KERJA</span>
-                <span className="text-slate-800 font-medium font-sans text-xs">
-                  Full-Time, Kontrak (On-site / Hybrid / Remote)
-                </span>
-              </div>
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase tracking-wider mb-1">
+                KESIAPAN KERJA
+              </span>
+              <span className="text-slate-900 font-semibold font-sans text-xs block">
+                Full-Time, Kontrak (On-site / Hybrid / Remote)
+              </span>
             </div>
 
-            <div className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
-              <div>
-                <span className="text-slate-400 block text-[11px]">DOMISILI & WAKTU</span>
-                <span className="text-slate-800 font-medium font-sans text-xs">
-                  Indonesia (WIB / UTC+7) — Siap Relokasi
-                </span>
-              </div>
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase tracking-wider mb-1">
+                DOMISILI & WAKTU
+              </span>
+              <span className="text-slate-900 font-semibold font-sans text-xs block">
+                Indonesia (WIB / UTC+7) — Siap Relokasi
+              </span>
             </div>
           </div>
 
@@ -91,36 +87,25 @@ export default function Contact({ profile }) {
                 {profile.contact.email}
               </a>
               <p className="text-xs text-slate-500 mt-1">
-                Silakan hubungi saya untuk undangan wawancara, penawaran posisi, atau pertukaran CV/Resume.
+                Silakan hubungi saya untuk undangan wawancara, penawaran posisi, atau tinjauan kualifikasi.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <a
                 href={mailtoUrl}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 text-white text-xs font-mono font-medium hover:bg-slate-800 transition-colors cursor-pointer shadow-2xs"
+                className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-slate-900 text-white text-xs font-mono font-medium hover:bg-slate-800 transition-colors cursor-pointer shadow-2xs"
               >
-                <Mail className="w-3.5 h-3.5" />
-                <span>Kirim Email Tawaran</span>
+                Kirim Email
               </a>
 
               <button
                 type="button"
                 onClick={handleCopy}
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg border border-slate-200 text-slate-700 text-xs font-mono font-medium hover:bg-slate-50 hover:border-slate-300 transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-slate-200 text-slate-700 text-xs font-mono font-medium hover:bg-slate-50 hover:border-slate-300 transition-colors cursor-pointer"
                 title="Salin alamat email"
               >
-                {copied ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span className="text-emerald-700">Tersalin</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5 text-slate-500" />
-                    <span>Salin Alamat</span>
-                  </>
-                )}
+                {copied ? 'Email Tersalin ✓' : 'Salin Alamat'}
               </button>
             </div>
           </div>
@@ -135,7 +120,7 @@ export default function Contact({ profile }) {
               className="p-4 rounded-xl border border-slate-200/90 hover:border-slate-300 hover:bg-slate-50/70 transition-all flex items-center justify-between group"
             >
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 group-hover:text-blue-600 group-hover:border-blue-200 transition-colors">
+                <div className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 group-hover:text-blue-600 group-hover:border-blue-200 transition-colors">
                   <LinkedInIcon className="w-4 h-4" />
                 </div>
                 <div>
@@ -143,11 +128,13 @@ export default function Contact({ profile }) {
                     LinkedIn Profil
                   </span>
                   <span className="text-xs text-slate-500 font-mono">
-                    linkedin.com/in/fadhilsyauqy08
+                    /in/fadhilsyauqy08
                   </span>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-slate-900 transition-colors" />
+              <span className="text-xs font-mono text-slate-400 group-hover:text-slate-900">
+                Kunjungi ↗
+              </span>
             </a>
 
             {/* GitHub */}
@@ -158,7 +145,7 @@ export default function Contact({ profile }) {
               className="p-4 rounded-xl border border-slate-200/90 hover:border-slate-300 hover:bg-slate-50/70 transition-all flex items-center justify-between group"
             >
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 group-hover:text-slate-950 group-hover:border-slate-400 transition-colors">
+                <div className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 group-hover:text-slate-950 transition-colors">
                   <GitHubIcon className="w-4 h-4" />
                 </div>
                 <div>
@@ -166,11 +153,13 @@ export default function Contact({ profile }) {
                     GitHub Repositori
                   </span>
                   <span className="text-xs text-slate-500 font-mono">
-                    github.com/fadhilsyauqy
+                    @fadhilsyauqy
                   </span>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-slate-900 transition-colors" />
+              <span className="text-xs font-mono text-slate-400 group-hover:text-slate-900">
+                Kunjungi ↗
+              </span>
             </a>
           </div>
         </div>

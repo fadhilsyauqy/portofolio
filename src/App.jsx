@@ -101,10 +101,7 @@ export default function App() {
           profile={portfolioData.profile}
           onNavigateToCV={() => navigateTo('cv')}
         />
-        <About
-          profile={portfolioData.profile}
-          onNavigateToCV={() => navigateTo('cv')}
-        />
+        <About profile={portfolioData.profile} />
         <Skills skillsMatrix={portfolioData.skillsMatrix} />
         <Projects
           projects={portfolioData.featuredProjects}

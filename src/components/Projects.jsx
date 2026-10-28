@@ -1,6 +1,4 @@
 import React from 'react';
-import { ArrowUpRight, Images, Check } from 'lucide-react';
-import { GitHubIcon } from './Icons';
 
 export default function Projects({ projects, onOpenModal }) {
   return (
@@ -21,7 +19,7 @@ export default function Projects({ projects, onOpenModal }) {
         </p>
 
         {/* Project List */}
-        <div className="space-y-20">
+        <div className="space-y-16">
           {projects.map((project) => (
             <article
               key={project.id}
@@ -53,7 +51,7 @@ export default function Projects({ projects, onOpenModal }) {
                       {project.summary}
                     </p>
 
-                    {/* Architectural Highlights */}
+                    {/* Architectural Highlights - Clean typographic list without repetitive icons */}
                     <div className="mb-6 space-y-2">
                       <h4 className="text-xs font-mono uppercase text-slate-400 tracking-wider">
                         Sorotan Teknis:
@@ -61,8 +59,8 @@ export default function Projects({ projects, onOpenModal }) {
                       <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
                         {project.highlights.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2.5">
-                            <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                            <span>{item}</span>
+                            <span className="text-slate-300 font-mono select-none mt-0.5">—</span>
+                            <span className="leading-relaxed">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -86,10 +84,9 @@ export default function Projects({ projects, onOpenModal }) {
                       <button
                         type="button"
                         onClick={() => onOpenModal(project, 0)}
-                        className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3.5 py-2 rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors cursor-pointer"
+                        className="text-xs font-mono font-medium px-3.5 py-2 rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors cursor-pointer"
                       >
-                        <Images className="w-3.5 h-3.5" />
-                        <span>Galeri ({project.slides.length})</span>
+                        Galeri ({project.slides.length})
                       </button>
 
                       {project.github && (
@@ -97,11 +94,9 @@ export default function Projects({ projects, onOpenModal }) {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3.5 py-2 rounded-md bg-white border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-50 transition-colors"
+                          className="text-xs font-mono font-medium px-3.5 py-2 rounded-md bg-white border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-50 transition-colors"
                         >
-                          <GitHubIcon className="w-3.5 h-3.5" />
-                          <span>Kode</span>
-                          <ArrowUpRight className="w-3 h-3 text-slate-400" />
+                          GitHub ↗
                         </a>
                       )}
                     </div>
@@ -120,25 +115,20 @@ export default function Projects({ projects, onOpenModal }) {
                         onOpenModal(project, 0);
                       }
                     }}
-                    className="group relative aspect-video rounded-xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer shadow-xs hover:border-slate-400 transition-colors"
-                    title={`Klik untuk memperbesar galeri ${project.title}`}
+                    className="group relative rounded-xl overflow-hidden border border-slate-200/90 bg-slate-100 cursor-pointer aspect-[16/10]"
                   >
                     <img
                       src={project.coverImage}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-103"
                       loading="lazy"
+                      className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-3.5 py-1.5 rounded-full bg-white text-slate-900 font-mono text-xs font-semibold flex items-center gap-2 shadow-md">
-                        <Images className="w-3.5 h-3.5 text-accent" />
-                        Perbesar Gambar
+                    <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-xs font-mono font-medium text-white bg-slate-950/80 px-3 py-1.5 rounded-md backdrop-blur-xs">
+                        Buka Pratinjau
                       </span>
                     </div>
                   </div>
-                  <p className="text-[11px] font-mono text-slate-400 text-center mt-2">
-                    Klik gambar untuk membuka lightbox resolusi penuh
-                  </p>
                 </div>
               </div>
             </article>

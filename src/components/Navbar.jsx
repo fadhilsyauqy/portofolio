@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
-  { label: 'Tentang', href: '#about' },
-  { label: 'Keahlian', href: '#skills' },
-  { label: 'Karya Pilihan', href: '#projects' },
-  { label: 'Kontak', href: '#contact' },
+  { label: 'Tentang', href: '#about', isRoute: false },
+  { label: 'Keahlian', href: '#skills', isRoute: false },
+  { label: 'Karya Pilihan', href: '#projects', isRoute: false },
+  { label: 'Kontak', href: '#contact', isRoute: false },
+  { label: 'Curriculum Vitae', href: '#cv', isRoute: true },
 ];
 
 export default function Navbar({ profile, onNavigate }) {
@@ -37,12 +38,16 @@ export default function Navbar({ profile, onNavigate }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (e, href) => {
+  const handleLinkClick = (e, link) => {
     e.preventDefault();
     setMobileOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (link.isRoute) {
+      if (onNavigate) onNavigate('cv');
+    } else {
+      const target = document.querySelector(link.href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -58,7 +63,7 @@ export default function Navbar({ profile, onNavigate }) {
         {/* Identity & Status */}
         <a
           href="#about"
-          onClick={(e) => handleLinkClick(e, '#about')}
+          onClick={(e) => handleLinkClick(e, { href: '#about', isRoute: false })}
           className="flex items-center gap-2.5 text-slate-900 group"
         >
           <span className="font-semibold text-sm tracking-tight group-hover:text-accent transition-colors">
@@ -74,14 +79,16 @@ export default function Navbar({ profile, onNavigate }) {
         <nav className="hidden md:flex items-center space-x-7 text-sm">
           {NAV_LINKS.map((link) => {
             const sectionId = link.href.replace('#', '');
-            const isActive = activeSection === sectionId;
+            const isActive = !link.isRoute && activeSection === sectionId;
             return (
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
+                onClick={(e) => handleLinkClick(e, link)}
                 className={`transition-colors duration-150 py-1 ${
-                  isActive
+                  link.isRoute
+                    ? 'text-slate-900 font-semibold px-2.5 py-1 rounded-md bg-slate-100/90 hover:bg-slate-200/80 border border-slate-200/70 text-xs font-mono'
+                    : isActive
                     ? 'text-slate-900 font-medium'
                     : 'text-slate-500 hover:text-slate-900'
                 }`}
@@ -90,27 +97,15 @@ export default function Navbar({ profile, onNavigate }) {
               </a>
             );
           })}
-
-          {/* CV Button in Navigation */}
-          <button
-            type="button"
-            onClick={() => onNavigate && onNavigate('cv')}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium text-slate-700 bg-slate-100/80 hover:bg-slate-200/80 hover:text-slate-900 transition-colors cursor-pointer border border-slate-200/70"
-            title="Buka Halaman CV Lengkap"
-          >
-            <FileText className="w-3.5 h-3.5 text-slate-500" />
-            <span>Lihat CV</span>
-          </button>
         </nav>
 
-        {/* Action Button */}
+        {/* Action Button: Clean text button without redundant icon */}
         <div className="flex items-center gap-3">
           <a
             href={`mailto:${profile.contact.email}`}
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3.5 py-1.5 rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-2xs"
+            className="hidden sm:inline-flex items-center text-xs font-mono font-medium px-3.5 py-1.5 rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-2xs"
           >
-            <span>Kirim Email</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            Kirim Email
           </a>
 
           {/* Mobile Menu Toggle */}
@@ -132,37 +127,22 @@ export default function Navbar({ profile, onNavigate }) {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => handleLinkClick(e, link.href)}
-              className="block py-2 text-sm text-slate-700 hover:text-slate-950 font-medium transition-colors"
+              onClick={(e) => handleLinkClick(e, link)}
+              className={`block py-2 text-sm font-medium transition-colors ${
+                link.isRoute
+                  ? 'text-slate-950 font-semibold border-t border-slate-100 pt-3 text-xs font-mono'
+                  : 'text-slate-700 hover:text-slate-950'
+              }`}
             >
               {link.label}
             </a>
           ))}
 
-          {/* CV Link in Mobile Menu */}
-          <button
-            type="button"
-            onClick={() => {
-              setMobileOpen(false);
-              if (onNavigate) onNavigate('cv');
-            }}
-            className="w-full text-left py-2.5 text-sm text-slate-800 hover:text-slate-950 font-medium transition-colors flex items-center justify-between border-t border-slate-100 pt-3 cursor-pointer"
-          >
-            <span className="flex items-center gap-2">
-              <FileText className="w-4 h-4 text-slate-500" />
-              <span>Curriculum Vitae (CV)</span>
-            </span>
-            <span className="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
-              PDF & Web
-            </span>
-          </button>
-
           <a
             href={`mailto:${profile.contact.email}`}
-            className="inline-flex w-full items-center justify-center gap-1.5 text-xs font-mono font-medium px-4 py-2.5 rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors mt-2"
+            className="inline-flex w-full items-center justify-center text-xs font-mono font-medium px-4 py-2.5 rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors mt-2"
           >
-            <span>Kirim Email</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            Kirim Email
           </a>
         </div>
       )}

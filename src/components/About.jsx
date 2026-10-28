@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { GraduationCap, MapPin, CheckCircle2, FileText } from 'lucide-react';
 
-export default function About({ profile, onNavigateToCV }) {
+export default function About({ profile }) {
   const [imgSrc, setImgSrc] = useState(profile.photo);
 
   return (
@@ -25,55 +24,47 @@ export default function About({ profile, onNavigateToCV }) {
               <p key={index}>{paragraph}</p>
             ))}
 
-            <div className="pt-4 border-t border-slate-200">
-              <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 mb-4">
-                Spesifikasi & Riwayat Pendidikan
+            <div className="pt-6 border-t border-slate-200">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-4">
+                Informasi Pendidikan & Spesialisasi
               </h3>
 
-              <div className="space-y-3 text-sm">
-                <div className="flex items-start gap-3">
-                  <GraduationCap className="w-4 h-4 text-slate-700 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-medium text-slate-900">
-                      {profile.education.institution}
-                    </span>
-                    <span className="text-slate-500 block text-xs">
-                      {profile.education.degree}
-                    </span>
-                  </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                <div className="p-3 rounded-lg bg-white border border-slate-200/80">
+                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1">
+                    PENDIDIKAN
+                  </span>
+                  <span className="font-semibold text-slate-900 block">
+                    {profile.education.institution}
+                  </span>
+                  <span className="text-slate-500 text-[11px] mt-0.5 block">
+                    {profile.education.degree}
+                  </span>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-slate-700 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-medium text-slate-900">Domisili</span>
-                    <span className="text-slate-500 block text-xs">
-                      {profile.location}
-                    </span>
-                  </div>
+                <div className="p-3 rounded-lg bg-white border border-slate-200/80">
+                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1">
+                    DOMISILI
+                  </span>
+                  <span className="font-semibold text-slate-900 block">
+                    Indonesia
+                  </span>
+                  <span className="text-slate-500 text-[11px] mt-0.5 block">
+                    WIB / UTC+7 (Siap Relokasi)
+                  </span>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-medium text-slate-900">Fokus Pengembangan</span>
-                    <span className="text-slate-500 block text-xs">
-                      Full-Stack Web (Node.js, React, Laravel) & Relational DB (PostgreSQL, MySQL)
-                    </span>
-                  </div>
+                <div className="p-3 rounded-lg bg-white border border-slate-200/80">
+                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1">
+                    FOKUS SISTEM
+                  </span>
+                  <span className="font-semibold text-slate-900 block">
+                    Full-Stack & DB
+                  </span>
+                  <span className="text-slate-500 text-[11px] mt-0.5 block">
+                    Node.js, PostgreSQL, Cloud
+                  </span>
                 </div>
-              </div>
-
-              {/* Link to Full CV */}
-              <div className="mt-6 pt-4 border-t border-slate-100">
-                <button
-                  type="button"
-                  onClick={onNavigateToCV}
-                  className="inline-flex items-center gap-2 text-xs font-mono font-medium text-slate-800 hover:text-slate-950 px-3 py-1.5 rounded-lg bg-slate-100/90 hover:bg-slate-200/80 transition-colors cursor-pointer border border-slate-200"
-                >
-                  <FileText className="w-3.5 h-3.5 text-slate-500" />
-                  <span>Buka Curriculum Vitae (CV) Lengkap →</span>
-                </button>
               </div>
             </div>
           </div>
